@@ -34,7 +34,6 @@ nav a {
   transition: color 0.3s ease;
 }
 
-
 .container {
   display: flex;
   justify-content: space-between;
@@ -49,7 +48,7 @@ nav a {
 .card {
   width: 75%;
   margin: 10px;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
@@ -61,7 +60,8 @@ nav a {
 .card button {
   background-color: #fff;
   border: none;
-  width: 100%;
+  width: 25%;
+
   border-radius: 5px;
   padding: 10px;
   margin: 15px 0;
@@ -71,7 +71,7 @@ nav a {
 }
 
 .card input {
-  width: 100%;
+  width: 80%;
   padding: 10px;
   margin: 15px 0;
   border: 1px solid #ccc;
@@ -83,6 +83,6 @@ nav a {
   background-color: #333333;
   color: #fff;
   margin: 10px;
-  padding: 10px;
+  padding: 20px;
   width: 25%;
 }

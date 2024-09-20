@@ -15,27 +15,27 @@
       <p>Conversor de valores entre decimal, octal e hexadecimal.</p>
     </header>
     <nav>
-      <a href="./marises-machine-binario.html">Binário</a>
-      <a href="#decOct">Octal</a>
-      <a href="#decHexa">Hexadecimal</a>
+      <a href="./marises-machine.html">Decimal</a>
+      <a href="#binarioOctal">Octal</a>
+      <a href="#binarioHexa">Hexadecimal</a>
     </nav>
 
     <div class="container">
       <div class="wrapper-card">
         <div class="card">
-          <h3>Decimal para Binário</h3>
+          <h3>Binario para Decimal</h3>
           <input
-            id="decimalBinario"
+            id="binarioDecimal"
             type="text"
-            placeholder="Digite o valor em decimal"
+            placeholder="Digite o valor binário"
           />
-          <button onclick="converterBinario()">Converter</button>
+          <button onclick="converterDecimal()">Converter</button>
 
           <p>Resultado: <span id="resultadoBinario"></span></p>
         </div>
 
         <div class="exemplo-item">
-          <h4>Decimal para Binário</h4>
+          <h4>Binario para Decimal</h4>
           <p><strong>Exemplo:</strong> Decimal 10 = Binário 1010</p>
 
           
@@ -44,17 +44,17 @@
 
       <div class="wrapper-card">
         <div class="card">
-          <h3>Decimal para Octal</h3>
+          <h3>Binario para Octal</h3>
           <input
-            id="decOct"
+            id="binarioOctal"
             type="text"
-            placeholder="Digite o valor em decimal"
+            placeholder="Digite o valor binário"
           />
           <button onclick="converterOctal()">Converter</button>
           <p>Resultado: <span id="resultadoOctal"></span></p>
         </div>
         <div class="exemplo-item">
-                <h4>Decimal para Octal</h4>
+                <h4>Binario para Octal</h4>
                 <p><strong>Exemplo:</strong> Decimal 10 = Octal 12</p>
               </div>
         <!-- <div class="exemplo-item">
@@ -74,43 +74,43 @@
       </div>
       <div class="wrapper-card">
         <div class="card">
-          <h3>Decimal para Hexadecimal</h3>
+          <h3>Binario para Hexadecimal</h3>
           <input
-            id="decHexa"
+            id="binarioHexa"
             type="text"
-            placeholder="Digite o valor em decimal"
+            placeholder="Digite o valor binário"
           />
           <button onclick="converterHexadecimal()">Converter</button>
           <p>Resultado: <span id="resultadoHexadecimal"></span></p>
         </div>
         <div class="exemplo-item">
-          <h4>Decimal para Hexadecimal</h4>
+          <h4>Binario para Hexadecimal</h4>
           <p><strong>Exemplo:</strong> Decimal 10 = Hexadecimal A</p>
         </div>
     </div>
   </body>
 </html>
 <script>
-  function converterBinario() {
-    var binario = Number(decimalBinario.value);
+  function converterDecimal() {
+    var decimal = Number(binarioDecimal.value);
 
-    binaria = binario.toString(2);
+    decimal = parseInt(decimal, 2);
 
-    resultadoBinario.innerHTML = ` ${binaria}`;
+    resultadoBinario.innerHTML = ` ${decimal}`;
   }
 
   function converterOctal() {
-    var octal = Number(decOct.value);
+    var octal = binarioOctal.value;
 
-    octal = octal.toString(8);
+    octal = parseInt(octal, 2).toString(8);
 
     resultadoOctal.innerHTML = ` ${octal}`;
   }
 
   function converterHexadecimal() {
-    var hexadecimal = Number(decHexa.value);
+    var hexadecimal = Number(binarioHexa.value);
 
-    hexadecimal = hexadecimal.toString(16);
+    hexadecimal = parseInt(hexadecimal, 2).toString(16);
 
     resultadoHexadecimal.innerHTML = ` ${hexadecimal}`;
   }
