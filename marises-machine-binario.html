@@ -22,6 +22,16 @@
   </nav>
 
   <div class="container">
+
+    <div class="card card-exemplos">
+
+      <h4>Aprenda com Exemplos Interativos</h4>
+      <label for="valorExemplo">Digite valores binário: </label>
+      <input id="valorExemplo" type="text" value="10" onkeyup="atualizarExemploInterativo()" />
+      <p>Decimal: <span id="exemploDecimal"></span></p>
+      <p>Octal: <span id="exemploOctal"></span></p>
+      <p>Hexadecimal: <span id="exemploHexadecimal"></span></p>
+    </div>
     <div class="wrapper-card">
       <div class="card">
         <h3>Binario para Decimal</h3>
@@ -32,149 +42,9 @@
       </div>
 
       <div class="exemplo-item">
-        <h4>Binario para Decimal</h4>
-        <table border="1" cellpadding="0" cellspacing="0"
-          style="width: 100%; max-width: 100%; border: solid #c3c3c3 1px; border-radius: 5px;"
-          class="table table-bordered table-striped">
-          <tbody>
-            <tr>
-              <td>
-                <p><strong>Binária</strong></p>
-              </td>
-              <td>
-                <p><strong>Decimal</strong></p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>0000</p>
-              </td>
-              <td>
-                <p>0</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>0001</p>
-              </td>
-              <td>
-                <p>1</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>0010</p>
-              </td>
-              <td>
-                <p>2</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>0011</p>
-              </td>
-              <td>
-                <p>3</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>0100</p>
-              </td>
-              <td>
-                <p>4</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>0101</p>
-              </td>
-              <td>
-                <p>5</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>0110</p>
-              </td>
-              <td>
-                <p>6</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>0111</p>
-              </td>
-              <td>
-                <p>7</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>1000</p>
-              </td>
-              <td>
-                <p>8</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>1001</p>
-              </td>
-              <td>
-                <p>9</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>1010</p>
-              </td>
-              <td>
-                <p>10</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>1011</p>
-              </td>
-              <td>
-                <p>11</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>1100</p>
-              </td>
-              <td>
-                <p>12</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>1101</p>
-              </td>
-              <td>
-                <p>13</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>1110</p>
-              </td>
-              <td>
-                <p>14</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>1111</p>
-              </td>
-              <td>
-                <p>15</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <h4>Exemplos Dinâmicos</h4>
+        <p id="exemploOctalDec">0 em octal = 0</p>
+        <p id="exemploHexadecimalDec">0 em hexadecimal = 0</p>
 
       </div>
     </div>
@@ -187,11 +57,13 @@
         <p>Resultado: <span id="resultadoOctal"></span></p>
       </div>
       <div class="exemplo-item">
-        <h4>Binario para Octal</h4>
+        <h4>Exemplos Dinâmicos</h4>
+        <p id="exemploDecimalOct"></p>
+        <p id="exemploHexadecimalOct"></p>
 
       </div>
-
     </div>
+
     <div class="wrapper-card">
       <div class="card">
         <h3>Binario para Hexadecimal</h3>
@@ -200,10 +72,13 @@
         <p>Resultado: <span id="resultadoHexadecimal"></span></p>
       </div>
       <div class="exemplo-item">
-        <h4>Binario para Hexadecimal</h4>
-        <p><strong>Exemplo:</strong> Decimal 10 = Hexadecimal A</p>
+        <h4>Exemplos Dinâmicos</h4>
+        <p id="exemploDecimalHexa"></p>
+        <p id="exemploOctalHexa"></p>
+
       </div>
     </div>
+  </div>
 </body>
 
 </html>
@@ -212,6 +87,7 @@
     var decimal = Number(binarioDecimal.value);
 
     decimal = parseInt(decimal, 2);
+    atualizarExemplo(decimal, "decimal");
 
     resultadoBinario.innerHTML = ` ${decimal}`;
   }
@@ -220,6 +96,7 @@
     var octal = binarioOctal.value;
 
     octal = parseInt(octal, 2).toString(8);
+    atualizarExemplo(octal, "octal");
 
     resultadoOctal.innerHTML = ` ${octal}`;
   }
@@ -228,7 +105,50 @@
     var hexadecimal = Number(binarioHexa.value);
 
     hexadecimal = parseInt(hexadecimal, 2).toString(16);
+    atualizarExemplo(hexadecimal, "hexa");
 
     resultadoHexadecimal.innerHTML = ` ${hexadecimal}`;
+  }
+
+  function atualizarExemplo(valor, tipo) {
+    if (tipo == "decimal") {
+      var exemploOct = `${valor} em octal = ${valor.toString(8)}`;
+      var exemploHexa = `${valor} em hexadecimal = ${valor.toString(16).toUpperCase()}`;
+      exemploOctalDec.innerHTML = exemploOct;
+      exemploHexadecimalDec.innerHTML = exemploHexa;
+    } else if (tipo == "octal") {
+      var exemploDec = `${valor} em decimal = ${parseInt(valor, 8)}`;
+      var exemploHexa = `${valor} em hexadecimal = ${parseInt(valor, 8).toString(16).toUpperCase()}`;
+      exemploDecimalOct.innerHTML = exemploDec;
+      exemploHexadecimalOct.innerHTML = exemploHexa;
+    } else if (tipo == "hexa") {
+      var exemploDec = `${valor} em decimal = ${parseInt(valor, 16)}`;
+      var exemploOct = `${valor} em octal = ${parseInt(valor, 16).toString(8)}`;
+      exemploDecimalHexa.innerHTML = exemploDec;
+      exemploOctalHexa.innerHTML = exemploOct;
+    }
+  }
+
+  function atualizarExemploInterativo() {
+    var valor = valorExemplo.value;
+    if (valor !== "") {
+      var decimal = parseInt(valor, 2);
+      exemploDecimal.innerHTML = decimal;
+      exemploOctal.innerHTML = decimal.toString(8);
+      exemploHexadecimal.innerHTML = decimal.toString(16).toUpperCase();
+    }
+  }
+
+  function atualizarExemploInterativo() {
+    var valor = valorExemplo.value;
+    if (valor !== "") {
+      exemploDecimal.innerHTML = parseInt(valor, 2).toString(10);
+      exemploOctal.innerHTML = parseInt(valor, 2).toString(8);
+      exemploHexadecimal.innerHTML = parseInt(valor, 2).toString(16).toUpperCase();
+    } else {
+      exemploDecimal.innerHTML = "";
+      exemploOctal.innerHTML = "";
+      exemploHexadecimal.innerHTML = "";
+    }
   }
 </script>

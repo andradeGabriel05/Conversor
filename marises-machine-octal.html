@@ -19,10 +19,22 @@
     <a href="./marises-machine.html">Decimal</a>
     <a href="./marises-machine-binario.html">Binário</a>
     <a href="./marises-machine-hexadecimal.html">Hexadecimal</a>
+
   </nav>
 
   <div class="container">
+    <div class="card card-exemplos">
+
+      <h4>Aprenda com Exemplos Interativos</h4>
+      <label for="valorExemplo">Digite valores octal: </label>
+      <input id="valorExemplo" type="text" value="10" onkeyup="atualizarExemploInterativo()" />
+      <p>Decimal: <span id="exemploDecimal"></span></p>
+      <p>Binário: <span id="exemploBinario"></span></p>
+      <p>Hexadecimal: <span id="exemploHexadecimal"></span></p>
+    </div>
+
     <div class="wrapper-card">
+
       <div class="card">
         <h3>Octal para Binário</h3>
         <input id="octalBinario" type="text" placeholder="Digite o valor em octal" />
@@ -39,32 +51,7 @@
       </div>
     </div>
 
-    <div class="wrapper-card">
-      <div class="card">
-        <h3>Octal para Decimal</h3>
-        <input id="octalDecimal" type="text" placeholder="Digite o valor em octal" />
-        <button onclick="converterDecimal()">Converter</button>
-        <p>Resultado: <span id="resultadoOctal"></span></p>
-      </div>
-      <div class="exemplo-item">
-        <h4>Decimal para Octal</h4>
-        <p><strong>Exemplo:</strong> Decimal 10 = Octal 12</p>
-      </div>
-      <!-- <div class="exemplo-item">
-          <h4>Decimal para Octal</h4>
-          <p>1 (octal) = 1 (dec)</p>
-          <p>2 (octal) = 2 (dec)</p>
-          <p>3 (octal) = 3 (dec)</p>
-          <p>4 (octal) = 4 (dec)</p>
-          <p>5 (octal) = 5 (dec)</p>
-          <p>6 (octal) = 6 (dec)</p>
-          <p>7 (octal) = 7 (dec)</p>
-          <p>10 (octal) = 8 (dec)</p>
-          <p>11 (octal) =  9(dec)</p>
-          <p>12 (octal) = 10 (dec)</p>
 
-        </div> -->
-    </div>
     <div class="wrapper-card">
       <div class="card">
         <h3>Octal para Hexadecimal</h3>
@@ -73,14 +60,43 @@
         <p>Resultado: <span id="resultadoHexadecimal"></span></p>
       </div>
       <div class="exemplo-item">
-        <h4>Decimal para Hexadecimal</h4>
-        <p><strong>Exemplo:</strong> Decimal 10 = Hexadecimal A</p>
+
       </div>
     </div>
 </body>
 
 </html>
 <script>
+  function atualizarExemplo(valor, tipo) {
+
+    if (tipo == "octal") {
+      var exemploHexa = `${valor} em hexadecimal = ${parseInt(valor, 2).toString(16).toUpperCase()}`;
+      var exemploBi = `${valor} em binario = ${valor.toString(2)}`;
+
+      exemploBi = `${valor} em binario = ${parseInt(valor, 8).toString(2)}`;
+      exemploHexa = `${valor} em hexadecimal = ${parseInt(valor, 8).toString(16).toUpperCase()}`;
+
+      exemploBinarioOct.innerHTML = exemploBi;
+      exemploHexadecimalOct.innerHTML = exemploHexa;
+
+    } else if (tipo == "hexa") {
+      var exemploOct = `${valor} em octal = ${parseInt(valor, 2).toString(8)}`;
+      var exemploBi = `${valor} em binario = ${valor.toString(2)}`;
+
+      exemploOct = `${valor} em octal = ${parseInt(valor, 16).toString(8)}`;
+      exemploBi = `${valor} em binario = ${valor.toString(2)}`;
+
+      exemploBinarioHexa.innerHTML = exemploBi;
+      exemploOctalHexa.innerHTML = exemploOct;
+    }
+    else {
+      exemploOct = `${valor} em octal = ${parseInt(valor, 2).toString(8)}`;
+      exemploHexa = `${valor} em hexadecimal = ${parseInt(valor, 2).toString(16).toUpperCase()}`;
+
+      exemploOctalBi.innerHTML = exemploOct;
+      exemploHexadecimalBi.innerHTML = exemploHexa;
+    }
+  }
   function converterBinario() {
     var binario = Number(octalBinario.value);
 
@@ -103,5 +119,18 @@
     hexadecimal = parseInt(hexadecimal, 8).toString(16);
 
     resultadoHexadecimal.innerHTML = ` ${hexadecimal}`;
+  }
+
+  function atualizarExemploInterativo() {
+    var valor = valorExemplo.value;
+    if (valor !== "") {
+      exemploDecimal.innerHTML = parseInt(valor, 8).toString(10);
+      exemploBinario.innerHTML = parseInt(valor, 8).toString(2);
+      exemploHexadecimal.innerHTML = parseInt(valor, 8).toString(16).toUpperCase();
+    } else {
+      exemploDecimal.innerHTML = "";
+      exemploBinario.innerHTML = "";
+      exemploHexadecimal.innerHTML = "";
+    }
   }
 </script>

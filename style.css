@@ -45,6 +45,10 @@ nav a {
   flex-direction: row;
 }
 
+.card-exemplos {
+  width: 100% !important;
+}
+
 .card {
   width: 75%;
   height: fit-content;
@@ -90,4 +94,19 @@ nav a {
   padding: 20px;
   width: 25%;
   border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  border: solid #c3c3c3 1px;
+  border-radius: 5px;
+}
+
+tbody tr {
+  width: 50%;
+}
+
+tbody td {
+  width: 50%;
 }
