@@ -1,94 +1,211 @@
 <!DOCTYPE html>
 <!-- saved from url=(0066)file:///C:/Users/Marise%20Miranda/Downloads/Marises%20Machine.html -->
 <html lang="pt-br">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marise's Machine</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-  <body>
-    <header>
-      <h1>Marise's Machine</h1>
-      <p>Conversor de valores entre decimal, octal e hexadecimal.</p>
-    </header>
-    <nav>
-      <a href="./marises-machine.html">Decimal</a>
-      <a href="#binarioOctal">Octal</a>
-      <a href="#binarioHexa">Hexadecimal</a>
-    </nav>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marise's Machine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <div class="container">
-      <div class="wrapper-card">
-        <div class="card">
-          <h3>Binario para Decimal</h3>
-          <input
-            id="binarioDecimal"
-            type="text"
-            placeholder="Digite o valor binário"
-          />
-          <button onclick="converterDecimal()">Converter</button>
+<body>
+  <header>
+    <h1>Marise's Machine</h1>
+    <p>Conversor de valores entre decimal, octal e hexadecimal.</p>
+  </header>
+  <nav>
+    <a href="./marises-machine.html">Decimal</a>
+    <a href="./marises-machine-octal.html">Octal</a>
+    <a href="./marises-machine-hexadecimal.html">Hexadecimal</a>
+  </nav>
 
-          <p>Resultado: <span id="resultadoBinario"></span></p>
-        </div>
+  <div class="container">
+    <div class="wrapper-card">
+      <div class="card">
+        <h3>Binario para Decimal</h3>
+        <input id="binarioDecimal" type="text" placeholder="Digite o valor binário" />
+        <button onclick="converterDecimal()">Converter</button>
 
-        <div class="exemplo-item">
-          <h4>Binario para Decimal</h4>
-          <p><strong>Exemplo:</strong> Decimal 10 = Binário 1010</p>
-
-          
-        </div>
+        <p>Resultado: <span id="resultadoBinario"></span></p>
       </div>
 
-      <div class="wrapper-card">
-        <div class="card">
-          <h3>Binario para Octal</h3>
-          <input
-            id="binarioOctal"
-            type="text"
-            placeholder="Digite o valor binário"
-          />
-          <button onclick="converterOctal()">Converter</button>
-          <p>Resultado: <span id="resultadoOctal"></span></p>
-        </div>
-        <div class="exemplo-item">
-                <h4>Binario para Octal</h4>
-                <p><strong>Exemplo:</strong> Decimal 10 = Octal 12</p>
-              </div>
-        <!-- <div class="exemplo-item">
-          <h4>Decimal para Octal</h4>
-          <p>1 (octal) = 1 (dec)</p>
-          <p>2 (octal) = 2 (dec)</p>
-          <p>3 (octal) = 3 (dec)</p>
-          <p>4 (octal) = 4 (dec)</p>
-          <p>5 (octal) = 5 (dec)</p>
-          <p>6 (octal) = 6 (dec)</p>
-          <p>7 (octal) = 7 (dec)</p>
-          <p>10 (octal) = 8 (dec)</p>
-          <p>11 (octal) =  9(dec)</p>
-          <p>12 (octal) = 10 (dec)</p>
+      <div class="exemplo-item">
+        <h4>Binario para Decimal</h4>
+        <table border="1" cellpadding="0" cellspacing="0"
+          style="width: 100%; max-width: 100%; border: solid #c3c3c3 1px; border-radius: 5px;"
+          class="table table-bordered table-striped">
+          <tbody>
+            <tr>
+              <td>
+                <p><strong>Binária</strong></p>
+              </td>
+              <td>
+                <p><strong>Decimal</strong></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>0000</p>
+              </td>
+              <td>
+                <p>0</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>0001</p>
+              </td>
+              <td>
+                <p>1</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>0010</p>
+              </td>
+              <td>
+                <p>2</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>0011</p>
+              </td>
+              <td>
+                <p>3</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>0100</p>
+              </td>
+              <td>
+                <p>4</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>0101</p>
+              </td>
+              <td>
+                <p>5</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>0110</p>
+              </td>
+              <td>
+                <p>6</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>0111</p>
+              </td>
+              <td>
+                <p>7</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>1000</p>
+              </td>
+              <td>
+                <p>8</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>1001</p>
+              </td>
+              <td>
+                <p>9</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>1010</p>
+              </td>
+              <td>
+                <p>10</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>1011</p>
+              </td>
+              <td>
+                <p>11</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>1100</p>
+              </td>
+              <td>
+                <p>12</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>1101</p>
+              </td>
+              <td>
+                <p>13</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>1110</p>
+              </td>
+              <td>
+                <p>14</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>1111</p>
+              </td>
+              <td>
+                <p>15</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-        </div> -->
       </div>
-      <div class="wrapper-card">
-        <div class="card">
-          <h3>Binario para Hexadecimal</h3>
-          <input
-            id="binarioHexa"
-            type="text"
-            placeholder="Digite o valor binário"
-          />
-          <button onclick="converterHexadecimal()">Converter</button>
-          <p>Resultado: <span id="resultadoHexadecimal"></span></p>
-        </div>
-        <div class="exemplo-item">
-          <h4>Binario para Hexadecimal</h4>
-          <p><strong>Exemplo:</strong> Decimal 10 = Hexadecimal A</p>
-        </div>
     </div>
-  </body>
+
+    <div class="wrapper-card">
+      <div class="card">
+        <h3>Binario para Octal</h3>
+        <input id="binarioOctal" type="text" placeholder="Digite o valor binário" />
+        <button onclick="converterOctal()">Converter</button>
+        <p>Resultado: <span id="resultadoOctal"></span></p>
+      </div>
+      <div class="exemplo-item">
+        <h4>Binario para Octal</h4>
+
+      </div>
+
+    </div>
+    <div class="wrapper-card">
+      <div class="card">
+        <h3>Binario para Hexadecimal</h3>
+        <input id="binarioHexa" type="text" placeholder="Digite o valor binário" />
+        <button onclick="converterHexadecimal()">Converter</button>
+        <p>Resultado: <span id="resultadoHexadecimal"></span></p>
+      </div>
+      <div class="exemplo-item">
+        <h4>Binario para Hexadecimal</h4>
+        <p><strong>Exemplo:</strong> Decimal 10 = Hexadecimal A</p>
+      </div>
+    </div>
+</body>
+
 </html>
 <script>
   function converterDecimal() {

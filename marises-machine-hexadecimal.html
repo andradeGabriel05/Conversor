@@ -15,19 +15,19 @@
       <p>Conversor de valores entre decimal, octal e hexadecimal.</p>
     </header>
     <nav>
+      <a href="./marises-machine.html">Decimal</a>
       <a href="./marises-machine-binario.html">Binário</a>
       <a href="./marises-machine-octal.html">Octal</a>
-      <a href="./marises-machine-hexadecimal.html">Hexadecimal</a>
     </nav>
 
     <div class="container">
       <div class="wrapper-card">
         <div class="card">
-          <h3>Decimal para Binário</h3>
+          <h3>Hexadecimal para Binário</h3>
           <input
-            id="decimalBinario"
+            id="hexaBinario"
             type="text"
-            placeholder="Digite o valor em decimal"
+            placeholder="Digite o valor em hexadecimal"
           />
           <button onclick="converterBinario()">Converter</button>
 
@@ -44,11 +44,11 @@
 
       <div class="wrapper-card">
         <div class="card">
-          <h3>Decimal para Octal</h3>
+          <h3>Hexadecimal para Octal</h3>
           <input
-            id="decOct"
+            id="hexaOctal"
             type="text"
-            placeholder="Digite o valor em decimal"
+            placeholder="Digite o valor em hexadecimal"
           />
           <button onclick="converterOctal()">Converter</button>
           <p>Resultado: <span id="resultadoOctal"></span></p>
@@ -74,11 +74,11 @@
       </div>
       <div class="wrapper-card">
         <div class="card">
-          <h3>Decimal para Hexadecimal</h3>
+          <h3>Hexadecimal para Decimal</h3>
           <input
-            id="decHexa"
+            id="hexaDecimal"
             type="text"
-            placeholder="Digite o valor em decimal"
+            placeholder="Digite o valor em hexadecimal"
           />
           <button onclick="converterHexadecimal()">Converter</button>
           <p>Resultado: <span id="resultadoHexadecimal"></span></p>
@@ -92,25 +92,25 @@
 </html>
 <script>
   function converterBinario() {
-    var binario = Number(decimalBinario.value);
+    var binario = hexaBinario.value;
 
-    binaria = binario.toString(2);
+    binario = parseInt(binario, 16).toString(2);
 
-    resultadoBinario.innerHTML = ` ${binaria}`;
+    resultadoBinario.innerHTML = ` ${binario}`;
   }
 
   function converterOctal() {
-    var octal = Number(decOct.value);
+    var octal = hexaOctal.value;
 
-    octal = octal.toString(8);
+    octal = parseInt(octal, 16).toString(8);
 
     resultadoOctal.innerHTML = ` ${octal}`;
   }
 
   function converterHexadecimal() {
-    var hexadecimal = Number(decHexa.value);
+    var hexadecimal = hexaDecimal.value;
 
-    hexadecimal = hexadecimal.toString(16);
+    hexadecimal = parseInt(hexadecimal, 16).toString(10);
 
     resultadoHexadecimal.innerHTML = ` ${hexadecimal}`;
   }
