@@ -26,7 +26,7 @@
 
       <h4>Aprenda com Exemplos Interativos</h4>
       <label for="valorExemplo">Digite valores decimais: </label>
-      <input id="valorExemplo" type="text" value="10" onkeyup="atualizarExemploInterativo()" />
+      <input id="valorExemplo" type="number" onkeyup="atualizarExemploInterativo()" onkeydown="verificarValor()" />
       <p>Binário: <span id="exemploBinario"></span></p>
       <p>Octal: <span id="exemploOctal"></span></p>
       <p>Hexadecimal: <span id="exemploHexadecimal"></span></p>
@@ -60,8 +60,8 @@
       </div>
       <div class="exemplo-item">
         <h4>Exemplos Dinâmicos</h4>
-        <p id="exemploBinarioOct"></p>
-        <p id="exemploHexadecimalOct"></p>
+        <p id="exemploBinarioOct">0 em binario = 0</p>
+        <p id="exemploHexadecimalOct">0 em hexadecimal = 0</p>
 
       </div>
 
@@ -75,8 +75,8 @@
       </div>
       <div class="exemplo-item">
         <h4>Exemplos Dinâmicos</h4>
-        <p id="exemploBinarioHexa"></p>
-        <p id="exemploOctalHexa"></p>
+        <p id="exemploBinarioHexa">0 em binario = 0</p>
+        <p id="exemploOctalHexa">0 em octal = 0</p>
 
       </div>
     </div>
@@ -117,23 +117,16 @@
       var exemploHexa = `${valor} em hexadecimal = ${parseInt(valor, 2).toString(16).toUpperCase()}`;
       var exemploBi = `${valor} em binario = ${valor.toString(2)}`;
 
-      exemploBi = `${valor} em binario = ${parseInt(valor, 8).toString(2)}`;
-      exemploHexa = `${valor} em hexadecimal = ${parseInt(valor, 8).toString(16).toUpperCase()}`;
-
       exemploBinarioOct.innerHTML = exemploBi;
       exemploHexadecimalOct.innerHTML = exemploHexa;
 
     } else if (tipo == "hexa") {
-      var exemploOct = `${valor} em octal = ${parseInt(valor, 2).toString(8)}`;
-      var exemploBi = `${valor} em binario = ${valor.toString(2)}`;
-
-      exemploOct = `${valor} em octal = ${parseInt(valor, 16).toString(8)}`;
-      exemploBi = `${valor} em binario = ${valor.toString(2)}`;
+      var exemploOct = `${valor} em octal = ${parseInt(valor, 16).toString(8)}`;
+      var exemploBi = `${valor} em binario = ${parseInt(valor, 16).toString(2)}`;
 
       exemploBinarioHexa.innerHTML = exemploBi;
       exemploOctalHexa.innerHTML = exemploOct;
-    }
-    else {
+    } else {
       exemploOct = `${valor} em octal = ${parseInt(valor, 2).toString(8)}`;
       exemploHexa = `${valor} em hexadecimal = ${parseInt(valor, 2).toString(16).toUpperCase()}`;
 

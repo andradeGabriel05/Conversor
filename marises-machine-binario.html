@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0066)file:///C:/Users/Marise%20Miranda/Downloads/Marises%20Machine.html -->
 <html lang="pt-br">
 
 <head>
@@ -27,7 +26,7 @@
 
       <h4>Aprenda com Exemplos Interativos</h4>
       <label for="valorExemplo">Digite valores binário: </label>
-      <input id="valorExemplo" type="text" value="10" onkeyup="atualizarExemploInterativo()" />
+      <input id="valorExemplo" type="text" onkeyup="atualizarExemploInterativo()" />
       <p>Decimal: <span id="exemploDecimal"></span></p>
       <p>Octal: <span id="exemploOctal"></span></p>
       <p>Hexadecimal: <span id="exemploHexadecimal"></span></p>
@@ -58,8 +57,8 @@
       </div>
       <div class="exemplo-item">
         <h4>Exemplos Dinâmicos</h4>
-        <p id="exemploDecimalOct"></p>
-        <p id="exemploHexadecimalOct"></p>
+        <p id="exemploDecimalOct">0 em decimal = 0</p>
+        <p id="exemploHexadecimalOct">0 em hexadecimal = 0</p>
 
       </div>
     </div>
@@ -73,8 +72,8 @@
       </div>
       <div class="exemplo-item">
         <h4>Exemplos Dinâmicos</h4>
-        <p id="exemploDecimalHexa"></p>
-        <p id="exemploOctalHexa"></p>
+        <p id="exemploDecimalHexa">0 em decimal = 0</p>
+        <p id="exemploOctalHexa">0 em octal = 0</p>
 
       </div>
     </div>
@@ -129,15 +128,6 @@
     }
   }
 
-  function atualizarExemploInterativo() {
-    var valor = valorExemplo.value;
-    if (valor !== "") {
-      var decimal = parseInt(valor, 2);
-      exemploDecimal.innerHTML = decimal;
-      exemploOctal.innerHTML = decimal.toString(8);
-      exemploHexadecimal.innerHTML = decimal.toString(16).toUpperCase();
-    }
-  }
 
   function atualizarExemploInterativo() {
     var valor = valorExemplo.value;
