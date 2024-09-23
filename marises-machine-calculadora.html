@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marise's Machine Calculadora</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Marise's Machine</h1>
+    <p>Conversor de valores entre decimal, octal e hexadecimal.</p>
+  </header>
+  <nav>
+    <a href="./marises-machine-binario.html">Binário</a>
+    <a href="./marises-machine-octal.html">Octal</a>
+    <a href="./marises-machine-hexadecimal.html">Hexadecimal</a>
+    <a href="./marises-machine-calculadora.html">Calculadora</a>
+  </nav>
+
+  <div class="container">
+    <section>
+      <h2>Calculadora</h2>
+      <label for="valorCalculadora">Escolha o Sistema de Numeração</label>
+      <select id="sistemaCalculadora">
+        <option value="binario">Binario</option>
+        <option value="decimal">Decimal</option>
+        <option value="octal">Octal</option>
+        <option value="hexadecimal">Hexadecimal</option>
+      </select>
+
+      <input type="text" name="" id="valor1Id" value="1">
+
+      <select id="operador">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+
+      <input type="text" name="" id="valor2Id" value="1">
+      <button onclick="calcular()">Calcular</button>
+
+      <p id="resultadoCalculadora"></p>
+    </section>
+  </div>
+</body>
+
+</html>
+<script>
+  function calcular() {
+    const sistemaNumeracao = sistemaCalculadora.value
+    var valor1 = valor1Id.value;
+    var valor2 = valor2Id.value;
+    var operacao = operador.value;
+    var resultado = 0;
+
+    if (sistemaNumeracao == "binario") {
+      if (operacao == "+") {
+        resultado = parseInt(valor1, 2) + parseInt(valor2, 2);
+      } else if (operacao == "-") {
+        resultado = parseInt(valor1, 2) - parseInt(valor2, 2);
+      } else if (operacao == "*") {
+        resultado = parseInt(valor1, 2) * parseInt(valor2, 2);
+      } else {
+        resultado = parseInt(valor1, 2) / parseInt(valor2, 2);
+      }
+      resultadoCalculadora.innerHTML = "Resultado: " + resultado.toString(2);
+
+    } else if (sistemaNumeracao == "decimal") {
+      if (operacao == "+") {
+        resultado = parseInt(valor1) + parseInt(valor2);
+      } else if (operacao == "-") {
+        resultado = parseInt(valor1) - parseInt(valor2);
+      } else if (operacao == "*") {
+        resultado = parseInt(valor1) * parseInt(valor2);
+      } else {
+        resultado = parseInt(valor1) / parseInt(valor2);
+      }
+      resultadoCalculadora.innerHTML = "Resultado: " + resultado;
+
+    } else if (sistemaNumeracao == "octal") {
+      if (operacao == "+") {
+        resultado = parseInt(valor1, 8) + parseInt(valor2, 8);
+      } else if (operacao == "-") {
+        resultado = parseInt(valor1, 8) - parseInt(valor2, 8);
+      } else if (operacao == "*") {
+        resultado = parseInt(valor1, 8) * parseInt(valor2, 8);
+      } else {
+        resultado = parseInt(valor1, 8) / parseInt(valor2, 8);
+      }
+      resultadoCalculadora.innerHTML = "Resultado: " + resultado.toString(8);
+
+    } else if (sistemaNumeracao == "hexadecimal") {
+      if (operacao == "+") {
+        resultado = parseInt(valor1, 16) + parseInt(valor2, 16);
+      } else if (operacao == "-") {
+        resultado = parseInt(valor1, 16) - parseInt(valor2, 16);
+      } else if (operacao == "*") {
+        resultado = parseInt(valor1, 16) * parseInt(valor2, 16);
+      } else {
+        resultado = parseInt(valor1, 16) / parseInt(valor2, 16);
+      }
+
+      resultadoCalculadora.innerHTML = "Resultado: " + resultado.toString(16).toUpperCase();
+    }
+  }
+</script>
