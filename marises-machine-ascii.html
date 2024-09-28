@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marise's Machine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_ascii.css">
+</head>
+
+<body>
+    <header>
+        <h1>Marise's Machine</h1>
+        <p>Conversor de valores entre decimal, binário, octal e hexadecimal.</p>
+
+    </header>
+    <nav>
+        <a href="./marises-machine-binario.html">Binário</a>
+        <a href="./marises-machine-octal.html">Octal</a>
+        <a href="./marises-machine-hexadecimal.html">Hexadecimal</a>
+        <a href="./marises-machine-calculadora.html">Calculadora</a>
+        <a href="./marises-machine-ascii.html">Tabela Ascii</a>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>ASCII Machine</h2>
+            <input type="text" name="" id="input_ascii" maxlength="1" placeholder="Digite um caractere">
+            <button onclick="converter()">Converter</button>
+
+            <div id="resultadoAscii"></div>
+        </section>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function converter() {
+        resultadoAscii.innerHTML = '';
+
+        var caractere = input_ascii.value;
+        var decimal = caractere.charCodeAt();
+
+        resultadoAscii.innerHTML += "<b>Decimal: </b>" + decimal + '<br>';
+        resultadoAscii.innerHTML += "<b>Binário: </b>" + decimal.toString(2) + '<br>';
+        resultadoAscii.innerHTML += "<b>Hexadecimal: </b>" + decimal.toString(16) + '<br>';
+    }
+</script>
